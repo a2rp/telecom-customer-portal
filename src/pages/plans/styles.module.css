@@ -46,11 +46,6 @@
   .totalNote > span { color: var(--color-muted); font-size: 14px; } .totalNote strong { color: var(--color-primary); font-size: 20px; }
   .totalNote small { color: var(--color-muted); font-size: 13px; font-weight: 500; }
   .disclaimer { color: var(--color-muted); font-size: 13px; text-align: center; }
-  .confirmPlan { display: grid; gap: 12px; }
-  .confirmPlan > div:not(.confirmActions) { display: flex; justify-content: space-between; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--color-border); font-size: 14px; }
-  .confirmPlan > div span { color: var(--color-muted); } .confirmPlan > div strong { color: var(--color-primary); }
-  .confirmPlan > p { padding: 11px; color: #795a31; background: #fff6df; border-radius: 10px; font-size: 13px; }
-  .confirmActions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 4px; }
   @media (max-width: 900px) { .planGrid { grid-template-columns: 1fr 1fr; } .planCard:last-child { grid-column: 1 / -1; min-height: 390px; } .addonGrid { grid-template-columns: 1fr; } }
   @media (max-width: 640px) {
     gap: 25px; .pageIntro { align-items: flex-start; flex-direction: column; } .currentLine { align-self: stretch; }
@@ -59,4 +54,16 @@
     .addonCard { grid-template-columns: 44px minmax(0, 1fr); } .addonCard .button { grid-column: 1 / -1; width: 100%; }
     .totalNote { align-items: flex-start; flex-direction: column; } .confirmActions { flex-direction: column-reverse; } .confirmActions .button { width: 100%; }
   }
+}
+
+.confirmPlan { display: grid; gap: 12px; }
+.confirmPlan > div:not(.confirmActions) { display: flex; justify-content: space-between; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+.confirmPlan > div span { color: var(--color-muted); }
+.confirmPlan > div strong { color: var(--color-primary); }
+.confirmPlan > p { padding: 11px; color: #795a31; background: #fff6df; border-radius: 10px; font-size: 13px; }
+.confirmActions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 4px; }
+
+@media (max-width: 640px) {
+  .confirmActions { flex-direction: column-reverse; }
+  .confirmActions .button { width: 100%; }
 }
