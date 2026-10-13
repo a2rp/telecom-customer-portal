@@ -1,0 +1,10 @@
+﻿.toastStack {
+  position: fixed; z-index: 60; right: 22px; bottom: 22px; width: min(390px, calc(100vw - 32px)); display: grid; gap: 10px; pointer-events: none;
+  .toast { min-height: 58px; display: grid; grid-template-columns: 22px 1fr 34px; align-items: center; gap: 11px; padding: 10px 12px; color: #fff; background: #173f3c; border: 1px solid rgb(255 255 255 / 20%); border-radius: 14px; box-shadow: 0 16px 44px rgb(14 35 33 / 24%); font-size: 14px; pointer-events: auto; animation: toast-in 180ms ease-out both;
+    > svg { color: var(--color-lime); font-size: 20px; }
+    button { width: 34px; height: 34px; display: grid; place-items: center; color: #fff; background: transparent; border: 0; border-radius: 8px; font-size: 17px; &:hover, &:focus-visible { background: rgb(255 255 255 / 14%); } }
+    &.error > svg { color: #ff9b87; } &.info > svg { color: #9fc7ff; }
+  }
+  @media (max-width: 560px) { right: 16px; bottom: 16px; }
+}
+@keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
