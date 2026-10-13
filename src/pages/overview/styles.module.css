@@ -1,0 +1,93 @@
+﻿.overview {
+  display: grid; gap: 38px;
+  .welcome { position: relative; min-height: 340px; display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 56px; overflow: hidden; padding: 42px 50px; color: #fff; background: #123c3d; border-radius: 28px; box-shadow: var(--shadow-soft); }
+  .welcomeCopy, .phoneCard { position: relative; z-index: 1; }
+  .welcomeCopy h1 { margin-top: 20px; font-size: clamp(34px, 4vw, 52px); font-weight: 760; letter-spacing: -2.2px; line-height: 1.08; }
+  .welcomeCopy > p { margin-top: 13px; color: rgb(255 255 255 / 73%); font-size: 17px; }
+  .lineStatus { width: fit-content; display: flex; align-items: center; gap: 8px; color: #e2f4c5; font-size: 14px; font-weight: 650; }
+  .lineStatus span { width: 9px; height: 9px; background: var(--color-lime); border-radius: 50%; box-shadow: 0 0 0 5px rgb(196 243 115 / 14%); }
+  .welcomeActions { display: flex; align-items: center; gap: 23px; margin-top: 28px; }
+  .welcomeActions .button-primary { color: var(--color-primary); background: var(--color-lime); border-color: var(--color-lime); }
+  .lightLink { display: inline-flex; align-items: center; gap: 6px; color: #fff; font-size: 14px; font-weight: 650; text-decoration: none; &:hover, &:focus-visible { color: var(--color-lime); text-decoration: none; } }
+  .phoneCard { width: min(390px, 100%); justify-self: end; padding: 23px; color: var(--color-text); background: #fff; border: 1px solid rgb(255 255 255 / 55%); border-radius: 20px; box-shadow: 0 22px 60px rgb(7 31 31 / 20%); }
+  .phoneCardTop, .dataSummary, .progressFoot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .phoneCardTop { color: var(--color-muted); font-size: 13px; font-weight: 650; }
+  .phoneCardTop > span:first-child { display: flex; align-items: center; gap: 7px; }
+  .activeBadge { padding: 4px 9px; color: #236342; background: #e5f5df; border-radius: 20px; font-size: 13px; }
+  .phoneCard > strong { display: block; margin-top: 18px; color: var(--color-primary); font-size: 27px; letter-spacing: -.5px; }
+  .phoneCard > p { margin-top: 3px; color: var(--color-muted); font-size: 14px; }
+  .phoneDivider { height: 1px; margin: 18px 0; background: var(--color-border); }
+  .dataSummary { align-items: flex-end; }
+  .dataSummary div { display: grid; gap: 4px; }
+  .dataSummary div > span, .dataSummary > span { color: var(--color-muted); font-size: 13px; }
+  .dataSummary strong { color: var(--color-primary); font-size: 26px; line-height: 1.1; }
+  .dataSummary small { color: var(--color-muted); font-size: 14px; font-weight: 500; }
+  .progressTrack { height: 9px; overflow: hidden; margin-top: 14px; background: #e9eee8; border-radius: 99px; }
+  .progressTrack span { height: 100%; display: block; background: var(--color-coral); border-radius: inherit; transition: width 240ms ease; }
+  .progressFoot { margin-top: 9px; color: var(--color-muted); font-size: 13px; }
+  .progressFoot a { display: flex; align-items: center; gap: 5px; color: var(--color-primary); font-weight: 650; text-decoration: none; &:hover { color: #356e57; text-decoration: none; } }
+  .signalRing { position: absolute; right: -135px; bottom: -310px; width: 640px; height: 640px; pointer-events: none; }
+  .signalRing i { position: absolute; inset: 0; border: 1px solid rgb(196 243 115 / 16%); border-radius: 50%; }
+  .signalRing i:nth-child(2) { inset: 46px; } .signalRing i:nth-child(3) { inset: 92px; }
+  .pageHeading { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+  .sectionLabel { color: #648076; font-size: 13px; font-weight: 750; letter-spacing: .7px; text-transform: uppercase; }
+  .pageHeading h2 { margin-top: 5px; color: var(--color-primary); font-size: 24px; font-weight: 720; letter-spacing: -.7px; }
+  .updated { display: flex; align-items: center; gap: 7px; padding-bottom: 4px; color: var(--color-muted); font-size: 13px; }
+  .summaryGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: -18px; }
+  .summaryCard { min-height: 218px; padding: 22px; background: #fff; border: 1px solid var(--color-border); border-radius: 19px; box-shadow: 0 9px 26px rgb(25 49 43 / 4%); }
+  .cardTop { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .iconBubble, .miniIcon { width: 42px; height: 42px; display: grid; place-items: center; color: var(--color-primary); background: #eaf1e9; border-radius: 13px; font-size: 19px; }
+  .dueLabel, .renewalLabel, .openCases, .paidLabel { color: var(--color-muted); font-size: 13px; }
+  .dueLabel { color: #b55a38; } .paidLabel { color: #236342; }
+  .summaryCard > p { margin-top: 17px; color: var(--color-muted); font-size: 14px; }
+  .summaryCard > strong { display: block; margin-top: 2px; color: var(--color-primary); font-size: 30px; font-weight: 750; letter-spacing: -1px; }
+  .summaryCard > .planName { font-size: 27px; }
+  .cardFoot { min-height: 45px; display: flex; align-items: flex-end; justify-content: space-between; gap: 9px; margin-top: 12px; }
+  .textButton { display: inline-flex; align-items: center; gap: 5px; color: var(--color-primary); background: none; border: 0; font-size: 13px; font-weight: 700; text-decoration: none; &:hover, &:focus-visible { color: #397259; text-decoration: none; } }
+  .muted { color: var(--color-muted); font-size: 13px; }
+  .summaryCard .button { min-height: 39px; padding: 0 13px; font-size: 13px; }
+  .lowerGrid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 18px; margin-top: -18px; }
+  .billingPanel, .activityPanel { padding: 24px; background: #fff; border: 1px solid var(--color-border); border-radius: 19px; box-shadow: 0 9px 26px rgb(25 49 43 / 4%); }
+  .panelHeading { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+  .panelHeading h2 { margin-top: 4px; color: var(--color-primary); font-size: 18px; font-weight: 730; letter-spacing: -.3px; }
+  .miniIcon { width: 37px; height: 37px; color: #28714d; background: #e5f5df; }
+  .panelDescription { margin-top: 16px; color: var(--color-muted); font-size: 14px; }
+  .paymentMethod { display: flex; align-items: center; gap: 13px; margin-top: 18px; padding: 13px; border: 1px solid var(--color-border); border-radius: 13px; }
+  .visaMark { width: 44px; height: 31px; display: grid; place-items: center; color: #183d74; background: #eef2fa; border-radius: 7px; font-size: 12px; font-weight: 850; font-style: italic; }
+  .paymentMethod > span:nth-child(2) { display: grid; color: var(--color-muted); font-size: 13px; }
+  .paymentMethod strong { color: var(--color-text); } .paymentMethod small { font-size: 13px; } .paymentMethod .textButton { margin-left: auto; }
+  .settingRow { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; padding-top: 15px; border-top: 1px solid var(--color-border); }
+  .settingRow > div { display: grid; gap: 2px; } .settingRow strong { font-size: 14px; } .settingRow span { color: var(--color-muted); font-size: 13px; }
+  .switch { flex: 0 0 auto; width: 50px; height: 29px; padding: 3px; background: #c9d3cc; border: 0; border-radius: 99px; transition: background 160ms ease; }
+  .switch i { width: 23px; height: 23px; display: block; background: #fff; border-radius: 50%; box-shadow: 0 2px 5px rgb(0 0 0 / 17%); transition: transform 160ms ease; }
+  .switchOn { background: #2d8054; } .switchOn i { transform: translateX(21px); }
+  .activityList { display: grid; margin-top: 14px; }
+  .activityList > div { min-height: 62px; display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; align-items: center; gap: 11px; border-top: 1px solid #edf0ec; }
+  .activityIcon { width: 34px; height: 34px; display: grid; place-items: center; color: #2d8054; background: #edf6e8; border-radius: 50%; font-size: 15px; }
+  .activityList > div:nth-child(2) .activityIcon { color: #9d6937; background: #fbf2df; } .activityList > div:nth-child(3) .activityIcon { color: #477087; background: #eaf2f5; }
+  .activityList > div > div { display: grid; gap: 2px; }
+  .activityList strong { font-size: 14px; } .activityList span:not(.activityIcon), .activityList time { color: var(--color-muted); font-size: 13px; }
+  .disclaimer { margin-top: -24px; color: var(--color-muted); font-size: 13px; text-align: center; }
+  .paymentDetails, .billDetails { display: grid; gap: 13px; }
+  .paymentDetails > div:not(.demoNote, .modalActions), .billDetails > div { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; }
+  .paymentDetails > div span, .billDetails span { color: var(--color-muted); } .paymentDetails > div strong, .billDetails strong { color: var(--color-primary); }
+  .demoNote { padding: 11px 13px; color: #795a31; background: #fff6df; border-radius: 10px; font-size: 13px; }
+  .modalActions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 5px; }
+  .billDetails { gap: 0; } .billDetails > div { padding: 11px 0; border-bottom: 1px solid var(--color-border); }
+  .billDetails .billTotal { font-size: 16px; font-weight: 750; } .billDetails > p { margin-top: 12px; color: var(--color-muted); font-size: 13px; }
+  @media (max-width: 1000px) { .welcome { grid-template-columns: 1fr 1fr; gap: 22px; padding: 35px; } .phoneCard { padding: 20px; } .lowerGrid { grid-template-columns: 1fr; } }
+  @media (max-width: 720px) {
+    gap: 27px; .welcome { grid-template-columns: 1fr; gap: 26px; padding: 28px 22px; }
+    .welcomeCopy h1 { font-size: 38px; } .phoneCard { width: 100%; justify-self: stretch; } .signalRing { right: -250px; bottom: -260px; }
+    .pageHeading { align-items: flex-start; flex-direction: column; gap: 9px; } .pageHeading h2 { font-size: 21px; }
+    .summaryGrid { grid-template-columns: 1fr; margin-top: -7px; } .summaryCard { min-height: 190px; } .lowerGrid { margin-top: -7px; }
+    .billingPanel, .activityPanel { padding: 20px 17px; } .cardFoot { flex-wrap: wrap; align-items: center; } .activityList time { align-self: center; }
+    .disclaimer { margin-top: -10px; }
+  }
+  @media (max-width: 440px) {
+    .welcomeActions { align-items: flex-start; flex-direction: column; gap: 13px; }
+    .activityList > div { grid-template-columns: 34px minmax(0, 1fr); } .activityList time { grid-column: 2; margin-top: -12px; }
+    .paymentMethod { flex-wrap: wrap; } .paymentMethod .textButton { margin-left: auto; }
+    .modalActions { flex-direction: column-reverse; } .modalActions .button { width: 100%; }
+  }
+}
