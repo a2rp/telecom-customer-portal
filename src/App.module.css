@@ -1,0 +1,16 @@
+﻿.appShell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .mainContent {
+    flex: 1;
+    width: min(1380px, 100%);
+    margin: 0 auto;
+    padding: 118px 42px 80px;
+  }
+
+  @media (max-width: 760px) {
+    .mainContent { padding: 94px 18px 56px; }
+  }
+}
