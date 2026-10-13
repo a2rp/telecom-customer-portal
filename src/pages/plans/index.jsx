@@ -25,7 +25,6 @@ const Plans = ({ currentPlan, setCurrentPlanId, addons, setAddons, notify, showM
             <button type="button" className="button button-secondary" onClick={closeModal}>Keep current plan</button>
             <button type="button" className="button button-primary" onClick={() => {
               setCurrentPlanId(plan.id);
-              setSelectedId(plan.id);
               closeModal();
               notify(plan.name + " is now selected for this demo line.");
             }}>Confirm plan</button>
@@ -96,4 +95,6 @@ const Plans = ({ currentPlan, setCurrentPlanId, addons, setAddons, notify, showM
 };
 
 export default Plans;
+
+
 
