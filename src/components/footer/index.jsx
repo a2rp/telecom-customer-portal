@@ -1,4 +1,4 @@
-﻿import { FaFacebookF, FaGithub, FaLinkedinIn, FaPatreon, FaYoutube } from "react-icons/fa";
+﻿import { FaCodepen, FaFacebookF, FaGithub, FaLinkedinIn, FaPatreon, FaYoutube } from "react-icons/fa";
 import { FiCoffee, FiGlobe, FiHeart, FiMail } from "react-icons/fi";
 import { SiCodepen } from "react-icons/si";
 import { Tooltip } from "react-tooltip";
@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 const footerLinks = [
   { label: "Portfolio", href: "https://www.ashishranjan.net", icon: FiGlobe, address: "ashishranjan.net" },
   { label: "GitHub", href: "https://github.com/a2rp", icon: FaGithub, address: "github.com/a2rp" },
-  { label: "CodePen", href: "https://codepen.io/ash1198", icon: SiCodepen, address: "codepen.io/ash1198" },
+  { label: "CodePen", href: "https://codepen.io/ash1198", icon: FaCodepen, address: "codepen.io/ash1198" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/aashishranjan", icon: FaLinkedinIn, address: "linkedin.com/in/aashishranjan" },
   { label: "Facebook", href: "https://www.facebook.com/theash.ashish/", icon: FaFacebookF, address: "facebook.com/theash.ashish" },
   { label: "YouTube", href: "https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1", icon: FaYoutube, address: "youtube.com/@ashishranjan-ashz" },
@@ -38,3 +38,4 @@ const Footer = () => (
 );
 
 export default Footer;
+
