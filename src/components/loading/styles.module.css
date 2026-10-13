@@ -1,0 +1,2 @@
+﻿.loading { min-height: 320px; display: grid; place-items: center; span { width: 40px; height: 40px; border: 3px solid #dce8dd; border-top-color: var(--color-primary); border-radius: 50%; animation: spin 700ms linear infinite; } }
+@keyframes spin { to { transform: rotate(360deg); } }
