@@ -53,7 +53,7 @@
   .miniIcon { width: 37px; height: 37px; color: #28714d; background: #e5f5df; }
   .panelDescription { margin-top: 16px; color: var(--color-muted); font-size: 14px; }
   .paymentMethod { display: flex; align-items: center; gap: 13px; margin-top: 18px; padding: 13px; border: 1px solid var(--color-border); border-radius: 13px; }
-  .visaMark { width: 44px; height: 31px; display: grid; place-items: center; color: #183d74; background: #eef2fa; border-radius: 7px; font-size: 12px; font-weight: 850; font-style: italic; }
+  .visaMark { width: 44px; height: 31px; display: grid; place-items: center; color: #183d74; background: #eef2fa; border-radius: 7px; font-size: 13px; font-weight: 850; font-style: italic; }
   .paymentMethod > span:nth-child(2) { display: grid; color: var(--color-muted); font-size: 13px; }
   .paymentMethod strong { color: var(--color-text); } .paymentMethod small { font-size: 13px; } .paymentMethod .textButton { margin-left: auto; }
   .settingRow { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; padding-top: 15px; border-top: 1px solid var(--color-border); }
@@ -91,3 +91,4 @@
     .modalActions { flex-direction: column-reverse; } .modalActions .button { width: 100%; }
   }
 }
+

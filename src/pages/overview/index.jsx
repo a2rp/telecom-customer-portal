@@ -2,9 +2,10 @@
 import { FiArrowDownRight, FiArrowUpRight, FiCalendar, FiCheck, FiChevronRight, FiCreditCard, FiHeadphones, FiRadio, FiWifi } from "react-icons/fi";
 import styles from "./styles.module.css";
 
-const Overview = ({ currentPlan, dataUsed, monthlyTotal, invoicePaid, setInvoicePaid, autoPay, setAutoPay, notify, showModal, closeModal }) => {
+const Overview = ({ currentPlan, dataUsed, monthlyTotal, invoicePaid, setInvoicePaid, autoPay, setAutoPay, tickets, notify, showModal, closeModal }) => {
   const usagePercent = Math.min(100, Math.round((dataUsed / currentPlan.data) * 100));
   const billAmount = invoicePaid ? 0 : monthlyTotal;
+  const activeCases = tickets.filter((ticket) => ticket.status !== "Resolved").length;
 
   const openPayment = () => showModal({
     title: "Review demo payment",
@@ -75,7 +76,7 @@ const Overview = ({ currentPlan, dataUsed, monthlyTotal, invoicePaid, setInvoice
       <section className={styles.summaryGrid} aria-label="Account summary">
         <article className={styles.summaryCard}>
           <div className={styles.cardTop}><span className={styles.iconBubble}><FiCreditCard /></span><span className={invoicePaid ? styles.paidLabel : styles.dueLabel}>{invoicePaid ? "Paid" : "Due Oct 20"}</span></div>
-          <p>Next bill</p>
+          <p>{invoicePaid ? "October balance" : "Next bill"}</p>
           <strong>{"$" + billAmount.toFixed(2)}</strong>
           <div className={styles.cardFoot}>
             <button type="button" className={styles.textButton} onClick={openBill}>Statement details <FiChevronRight /></button>
@@ -89,9 +90,9 @@ const Overview = ({ currentPlan, dataUsed, monthlyTotal, invoicePaid, setInvoice
           <div className={styles.cardFoot}><span className={styles.muted}>{"$" + currentPlan.price} / month</span><Link className={styles.textButton} to="/plans">Manage plan <FiChevronRight /></Link></div>
         </article>
         <article className={styles.summaryCard}>
-          <div className={styles.cardTop}><span className={styles.iconBubble}><FiHeadphones /></span><span className={styles.openCases}>2 active</span></div>
+          <div className={styles.cardTop}><span className={styles.iconBubble}><FiHeadphones /></span><span className={styles.openCases}>{activeCases} active</span></div>
           <p>Support cases</p>
-          <strong>2</strong>
+          <strong>{activeCases}</strong>
           <div className={styles.cardFoot}><span className={styles.muted}>Latest update today</span><Link className={styles.textButton} to="/support">View cases <FiChevronRight /></Link></div>
         </article>
       </section>
@@ -99,11 +100,11 @@ const Overview = ({ currentPlan, dataUsed, monthlyTotal, invoicePaid, setInvoice
       <section className={styles.lowerGrid}>
         <article className={styles.billingPanel}>
           <div className={styles.panelHeading}><div><p className={styles.sectionLabel}>Payment settings</p><h2>Keep your account on track</h2></div><span className={styles.miniIcon}><FiCheck /></span></div>
-          <p className={styles.panelDescription}>AutoPay is set to charge your Visa ending in 2048 on your due date.</p>
+          <p className={styles.panelDescription}>{autoPay ? "AutoPay is set to charge your Visa ending in 2048 on your due date." : "AutoPay is off. You can make each payment manually."}</p>
           <div className={styles.paymentMethod}><span className={styles.visaMark}>VISA</span><span>Visa ending in <strong>2048</strong><small>Expires 08/28</small></span><button type="button" className={styles.textButton} onClick={() => showModal({
             title: "Payment method",
             description: "Your saved demo payment method.",
-            children: <div className={styles.paymentDetails}><div><span>Card</span><strong>Visa ending in 2048</strong></div><div><span>Expiration</span><strong>08/28</strong></div><p className={styles.demoNote}>This is sample account information for the frontend preview.</p><button className="button button-secondary" type="button" onClick={() => { closeModal(); notify("Payment method settings opened."); }}>Done</button></div>,
+            children: <div className={styles.paymentDetails}><div><span>Card</span><strong>Visa ending in 2048</strong></div><div><span>Expiration</span><strong>08/28</strong></div><p className={styles.demoNote}>This is sample account information for the frontend preview.</p><button className="button button-secondary" type="button" onClick={() => { closeModal(); notify("Payment method details reviewed."); }}>Done</button></div>,
           })}>Details</button></div>
           <div className={styles.settingRow}>
             <div><strong>AutoPay</strong><span>Pay your statement automatically each month</span></div>
@@ -125,3 +126,5 @@ const Overview = ({ currentPlan, dataUsed, monthlyTotal, invoicePaid, setInvoice
 };
 
 export default Overview;
+
+
