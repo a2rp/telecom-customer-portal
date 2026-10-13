@@ -1,5 +1,4 @@
-﻿import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { FiCheck, FiChevronRight, FiGlobe, FiMusic, FiRadio, FiShield, FiZap } from "react-icons/fi";
 import { planOptions } from "../../data.js";
 import styles from "./styles.module.css";
@@ -11,9 +10,6 @@ const features = {
 };
 
 const Plans = ({ currentPlan, setCurrentPlanId, addons, setAddons, notify, showModal, closeModal }) => {
-  const [selectedId, setSelectedId] = useState(currentPlan.id);
-
-  useEffect(() => setSelectedId(currentPlan.id), [currentPlan.id]);
 
   const confirmPlan = (plan) => {
     if (plan.id === currentPlan.id) return;
@@ -70,7 +66,7 @@ const Plans = ({ currentPlan, setCurrentPlanId, addons, setAddons, notify, showM
                 <div className={styles.planPrice}><strong>{"$" + plan.price}</strong><span>/ month</span></div>
                 <div className={styles.dataAllowance}>{plan.data === 999 ? "Unlimited" : plan.data + " GB"} <span>monthly data</span></div>
                 <ul>{features[plan.id].map((feature) => <li key={feature}><FiCheck />{feature}</li>)}</ul>
-                <button type="button" className={isCurrent ? "button button-secondary" : "button button-primary"} disabled={isCurrent} onClick={() => { setSelectedId(plan.id); confirmPlan(plan); }}>
+                <button type="button" className={isCurrent ? "button button-secondary" : "button button-primary"} disabled={isCurrent} onClick={() => { confirmPlan(plan); }}>
                   {isCurrent ? "Your current plan" : "Choose " + plan.name}
                 </button>
               </article>
@@ -100,3 +96,4 @@ const Plans = ({ currentPlan, setCurrentPlanId, addons, setAddons, notify, showM
 };
 
 export default Plans;
+
