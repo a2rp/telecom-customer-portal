@@ -12,8 +12,8 @@ const Overview = ({ currentPlan, dataUsed, monthlyTotal, invoicePaid, setInvoice
     description: "This preview records a sample payment in this browser session. No payment is processed.",
     children: (
       <div className={styles.paymentDetails}>
-        <div><span>Current amount due</span><strong>{"$" + billAmount.toFixed(2)}</strong></div>
-        <div><span>Payment method</span><strong>Visa ending in 2048</strong></div>
+        <div><span>Current amount due:</span><strong>{"$" + billAmount.toFixed(2)}</strong></div>
+        <div><span>Payment method:</span><strong>Visa ending in 2048</strong></div>
         <div className={styles.demoNote}>Demo only. No card details are collected and no charge will be made.</div>
         <div className={styles.modalActions}>
           <button type="button" className="button button-secondary" data-dialog-cancel onClick={closeModal}>Cancel</button>
