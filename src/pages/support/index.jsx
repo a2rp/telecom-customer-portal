@@ -43,7 +43,7 @@ const Support = ({ tickets, setTickets, notify, showModal, closeModal }) => {
         </div>
         <label>Details<textarea name="detail" required minLength="12" maxLength="600" rows="4" placeholder="Share a few details so we can point you in the right direction." /></label>
         <p className={styles.formHint}>Do not include passwords, full payment card numbers, or other sensitive information.</p>
-        <div className={styles.formActions}><button type="button" className="button button-secondary" onClick={closeModal}>Cancel</button><button type="submit" className="button button-primary"><FiPlus /> Create case</button></div>
+        <div className={styles.formActions}><button type="button" className="button button-secondary" data-dialog-cancel onClick={closeModal}>Cancel</button><button type="submit" className="button button-primary"><FiPlus /> Create case</button></div>
       </form>
     ),
   });
@@ -78,7 +78,7 @@ const Support = ({ tickets, setTickets, notify, showModal, closeModal }) => {
             window.setTimeout(() => showModal({
               title: "Remove this case?",
               description: "Case " + ticket.id + " - " + ticket.subject + " will be removed from this demo account.",
-              children: <div className={styles.confirmDelete}><p>You cannot restore a case after removing it in this session.</p><div><button type="button" className="button button-secondary" onClick={closeModal}>Keep case</button><button type="button" className="button button-danger" onClick={() => { setTickets((items) => items.filter((item) => item.id !== ticket.id)); closeModal(); notify("Case " + ticket.id + " removed."); }}><FiTrash2 /> Remove case</button></div></div>,
+              children: <div className={styles.confirmDelete}><p>You cannot restore a case after removing it in this session.</p><div><button type="button" className="button button-secondary" data-dialog-cancel onClick={closeModal}>Keep case</button><button type="button" className="button button-danger" onClick={() => { setTickets((items) => items.filter((item) => item.id !== ticket.id)); closeModal(); notify("Case " + ticket.id + " removed."); }}><FiTrash2 /> Remove case</button></div></div>,
             }), 0);
           }}><FiTrash2 /> Remove case</button>
         </div>
@@ -133,4 +133,5 @@ const Support = ({ tickets, setTickets, notify, showModal, closeModal }) => {
 };
 
 export default Support;
+
 
