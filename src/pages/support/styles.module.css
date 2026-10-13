@@ -52,30 +52,6 @@
   .emptyState { min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--color-muted); text-align: center; }
   .emptyState > svg { color: #79938a; font-size: 27px; } .emptyState strong { color: var(--color-primary); font-size: 16px; } .emptyState p { margin-bottom: 5px; font-size: 14px; }
   .disclaimer { color: var(--color-muted); font-size: 13px; text-align: center; }
-  .caseForm { display: grid; gap: 15px; }
-  .caseForm label, .replyForm label { position: relative; display: grid; gap: 6px; color: var(--color-text); font-size: 14px; font-weight: 650; }
-  .caseForm input, .caseForm select, .caseForm textarea, .replyForm textarea { width: 100%; min-height: 44px; padding: 10px 12px; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: 10px; font-size: 14px; }
-  .caseForm input::placeholder, .caseForm textarea::placeholder, .replyForm textarea::placeholder { color: #899891; }
-  .caseForm textarea, .replyForm textarea { min-height: 105px; }
-  .formRow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .formRow label > svg { position: absolute; right: 12px; bottom: 14px; color: var(--color-muted); font-size: 15px; pointer-events: none; }
-  .formRow select { appearance: none; padding-right: 35px; }
-  .formHint { color: var(--color-muted); font-size: 13px; }
-  .formActions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 4px; }
-  .caseDetails { display: grid; gap: 16px; }
-  .detailsMeta { display: flex; align-items: center; gap: 9px; color: var(--color-muted); font-size: 13px; }
-  .messageBlock, .replyBlock { padding: 14px; background: #f7f9f6; border-radius: 12px; }
-  .replyBlock { background: #edf5e9; }
-  .messageBlock > span, .replyBlock > span { color: var(--color-muted); font-size: 13px; font-weight: 700; }
-  .messageBlock p, .replyBlock p { margin-top: 5px; color: var(--color-text); font-size: 14px; line-height: 1.55; }
-  .replyForm { display: grid; gap: 9px; }
-  .replyForm > button { justify-self: start; }
-  .detailsActions { display: flex; justify-content: space-between; gap: 10px; padding-top: 4px; border-top: 1px solid var(--color-border); }
-  .deleteButton { display: inline-flex; align-items: center; gap: 7px; padding: 0 12px; color: var(--color-danger); background: #fff; border: 1px solid #f0d4d1; border-radius: 11px; font-size: 13px; font-weight: 700; }
-  .deleteButton:hover { background: #fff4f1; }
-  .confirmDelete { display: grid; gap: 16px; }
-  .confirmDelete p { padding: 11px; color: #795a31; background: #fff6df; border-radius: 10px; font-size: 13px; }
-  .confirmDelete > div { display: flex; justify-content: flex-end; gap: 9px; }
   @media (max-width: 850px) { .caseToolbar { align-items: flex-start; flex-direction: column; } .searchBox { width: 100%; } }
   @media (max-width: 650px) {
     .supportHero { align-items: flex-start; flex-direction: column; padding: 26px 22px; }
@@ -89,4 +65,41 @@
     .formActions .button, .confirmDelete .button { width: 100%; } .detailsActions { align-items: stretch; flex-direction: column; }
     .detailsActions .button, .deleteButton { min-height: 43px; justify-content: center; }
   }
+}
+
+.caseForm { display: grid; gap: 15px; }
+.caseForm label, .replyForm label { position: relative; display: grid; gap: 6px; color: var(--color-text); font-size: 14px; font-weight: 650; }
+.caseForm input, .caseForm select, .caseForm textarea, .replyForm textarea { width: 100%; min-height: 44px; padding: 10px 12px; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: 10px; font-size: 14px; }
+.caseForm input::placeholder, .caseForm textarea::placeholder, .replyForm textarea::placeholder { color: #899891; }
+.caseForm textarea, .replyForm textarea { min-height: 105px; }
+.formRow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.formRow label > svg { position: absolute; right: 12px; bottom: 14px; color: var(--color-muted); font-size: 15px; pointer-events: none; }
+.formRow select { appearance: none; padding-right: 35px; }
+.formHint { color: var(--color-muted); font-size: 13px; }
+.formActions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 4px; }
+.caseDetails { display: grid; gap: 16px; }
+.detailsMeta { display: flex; align-items: center; gap: 9px; color: var(--color-muted); font-size: 13px; }
+.status { padding: 3px 8px; color: #8b6032; background: #fbf0dc; border-radius: 20px; font-size: 13px; font-weight: 650; }
+.status.open { color: #8b6032; background: #fbf0dc; }
+.status.inprogress { color: #456f8d; background: #e9f2f7; }
+.status.resolved { color: #31704b; background: #eaf5e7; }
+.messageBlock, .replyBlock { padding: 14px; background: #f7f9f6; border-radius: 12px; }
+.replyBlock { background: #edf5e9; }
+.messageBlock > span, .replyBlock > span { color: var(--color-muted); font-size: 13px; font-weight: 700; }
+.messageBlock p, .replyBlock p { margin-top: 5px; color: var(--color-text); font-size: 14px; line-height: 1.55; }
+.replyForm { display: grid; gap: 9px; }
+.replyForm > button { justify-self: start; }
+.detailsActions { display: flex; justify-content: space-between; gap: 10px; padding-top: 4px; border-top: 1px solid var(--color-border); }
+.deleteButton { display: inline-flex; align-items: center; gap: 7px; padding: 0 12px; color: var(--color-danger); background: #fff; border: 1px solid #f0d4d1; border-radius: 11px; font-size: 13px; font-weight: 700; }
+.deleteButton:hover { background: #fff4f1; }
+.confirmDelete { display: grid; gap: 16px; }
+.confirmDelete p { padding: 11px; color: #795a31; background: #fff6df; border-radius: 10px; font-size: 13px; }
+.confirmDelete > div { display: flex; justify-content: flex-end; gap: 9px; }
+
+@media (max-width: 650px) {
+  .formRow { grid-template-columns: 1fr; }
+  .formActions, .confirmDelete > div { flex-direction: column-reverse; }
+  .formActions .button, .confirmDelete .button { width: 100%; }
+  .detailsActions { align-items: stretch; flex-direction: column; }
+  .detailsActions .button, .deleteButton { min-height: 43px; justify-content: center; }
 }
