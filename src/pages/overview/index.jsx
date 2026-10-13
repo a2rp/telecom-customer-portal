@@ -16,7 +16,7 @@ const Overview = ({ currentPlan, dataUsed, monthlyTotal, invoicePaid, setInvoice
         <div><span>Payment method</span><strong>Visa ending in 2048</strong></div>
         <div className={styles.demoNote}>Demo only. No card details are collected and no charge will be made.</div>
         <div className={styles.modalActions}>
-          <button type="button" className="button button-secondary" onClick={closeModal}>Cancel</button>
+          <button type="button" className="button button-secondary" data-dialog-cancel onClick={closeModal}>Cancel</button>
           <button type="button" className="button button-primary" onClick={() => {
             setInvoicePaid(true);
             closeModal();
@@ -104,7 +104,7 @@ const Overview = ({ currentPlan, dataUsed, monthlyTotal, invoicePaid, setInvoice
           <div className={styles.paymentMethod}><span className={styles.visaMark}>VISA</span><span>Visa ending in <strong>2048</strong><small>Expires 08/28</small></span><button type="button" className={styles.textButton} onClick={() => showModal({
             title: "Payment method",
             description: "Your saved demo payment method.",
-            children: <div className={styles.paymentDetails}><div><span>Card</span><strong>Visa ending in 2048</strong></div><div><span>Expiration</span><strong>08/28</strong></div><p className={styles.demoNote}>This is sample account information for the frontend preview.</p><button className="button button-secondary" type="button" onClick={() => { closeModal(); notify("Payment method details reviewed."); }}>Done</button></div>,
+            children: <div className={styles.paymentDetails}><div><span>Card</span><strong>Visa ending in 2048</strong></div><div><span>Expiration</span><strong>08/28</strong></div><p className={styles.demoNote}>This is sample account information for the frontend preview.</p><button className="button button-secondary" type="button" data-dialog-cancel onClick={() => { closeModal(); notify("Payment method details reviewed."); }}>Done</button></div>,
           })}>Details</button></div>
           <div className={styles.settingRow}>
             <div><strong>AutoPay</strong><span>Pay your statement automatically each month</span></div>
@@ -126,5 +126,6 @@ const Overview = ({ currentPlan, dataUsed, monthlyTotal, invoicePaid, setInvoice
 };
 
 export default Overview;
+
 
 
