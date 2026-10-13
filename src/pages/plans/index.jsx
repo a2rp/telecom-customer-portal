@@ -22,7 +22,7 @@ const Plans = ({ currentPlan, setCurrentPlanId, addons, setAddons, notify, showM
           <div><span>Included data</span><strong>{plan.data === 999 ? "Unlimited" : plan.data + " GB"}</strong></div>
           <p>This change updates the plan shown across this preview. It does not activate a real mobile plan.</p>
           <div className={styles.confirmActions}>
-            <button type="button" className="button button-secondary" onClick={closeModal}>Keep current plan</button>
+            <button type="button" className="button button-secondary" data-dialog-cancel onClick={closeModal}>Keep current plan</button>
             <button type="button" className="button button-primary" onClick={() => {
               setCurrentPlanId(plan.id);
               closeModal();
@@ -95,6 +95,7 @@ const Plans = ({ currentPlan, setCurrentPlanId, addons, setAddons, notify, showM
 };
 
 export default Plans;
+
 
 
 
