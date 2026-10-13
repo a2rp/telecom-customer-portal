@@ -1,6 +1,5 @@
 ﻿import { FaCodepen, FaFacebookF, FaGithub, FaLinkedinIn, FaPatreon, FaYoutube } from "react-icons/fa";
 import { FiCoffee, FiGlobe, FiHeart, FiMail } from "react-icons/fi";
-import { SiCodepen } from "react-icons/si";
 import { Tooltip } from "react-tooltip";
 import styles from "./styles.module.css";
 
@@ -38,4 +37,5 @@ const Footer = () => (
 );
 
 export default Footer;
+
 
