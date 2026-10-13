@@ -1,0 +1,62 @@
+﻿.plansPage {
+  display: grid; gap: 32px;
+  .pageIntro { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+  .label { color: #648076; font-size: 13px; font-weight: 750; letter-spacing: .7px; text-transform: uppercase; }
+  .pageIntro h1 { margin-top: 6px; color: var(--color-primary); font-size: clamp(32px, 4vw, 45px); font-weight: 760; letter-spacing: -1.8px; }
+  .pageIntro > div:first-child > p:last-child { max-width: 620px; margin-top: 7px; color: var(--color-muted); font-size: 15px; }
+  .currentLine { display: flex; align-items: center; gap: 10px; padding: 11px 15px; background: #fff; border: 1px solid var(--color-border); border-radius: 14px; }
+  .currentLine > span { width: 39px; height: 39px; display: grid; place-items: center; color: var(--color-primary); background: var(--color-soft); border-radius: 12px; font-size: 18px; }
+  .currentLine div { display: grid; gap: 1px; } .currentLine small { color: var(--color-muted); font-size: 13px; } .currentLine strong { font-size: 14px; }
+  .currentPlanBand { display: flex; align-items: center; gap: 15px; padding: 18px 23px; color: #fff; background: #123c3d; border-radius: 17px; }
+  .currentIcon { width: 45px; height: 45px; display: grid; place-items: center; color: var(--color-primary); background: var(--color-lime); border-radius: 14px; font-size: 21px; }
+  .currentPlanBand > div:nth-child(2) { flex: 1; } .currentPlanBand p { color: #d3e2d5; font-size: 13px; }
+  .currentPlanBand h2 { display: flex; align-items: center; gap: 10px; margin-top: 2px; font-size: 20px; font-weight: 700; }
+  .currentPlanBand h2 span { padding: 4px 9px; color: var(--color-lime); border: 1px solid rgb(196 243 115 / 38%); border-radius: 30px; font-size: 13px; font-weight: 600; }
+  .priceNow { display: grid; justify-items: end; } .priceNow strong { font-size: 23px; } .priceNow span { color: #d3e2d5; font-size: 13px; }
+  .planSection, .addonsSection { display: grid; gap: 16px; }
+  .sectionTitle { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; }
+  .sectionTitle h2 { margin-top: 3px; color: var(--color-primary); font-size: 23px; font-weight: 730; letter-spacing: -.6px; }
+  .sectionTitle > span { color: var(--color-muted); font-size: 13px; }
+  .planGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .planCard { position: relative; display: flex; flex-direction: column; min-height: 420px; padding: 22px; background: #fff; border: 1px solid var(--color-border); border-radius: 19px; box-shadow: 0 8px 24px rgb(25 49 43 / 4%); }
+  .planCard.current { border: 2px solid #4b8e69; padding: 21px; box-shadow: 0 12px 30px rgb(44 102 69 / 10%); }
+  .planTop { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .planIcon { width: 42px; height: 42px; display: grid; place-items: center; color: var(--color-primary); background: var(--color-soft); border-radius: 13px; font-size: 19px; }
+  .sand .planIcon { color: #98683a; background: #f8f0e3; } .blue .planIcon { color: #456d92; background: #eaf1f8; }
+  .currentTag { display: flex; align-items: center; gap: 5px; color: #31704b; font-size: 13px; font-weight: 700; }
+  .planDetail { margin-top: 20px; color: var(--color-muted); font-size: 13px; } .planCard h3 { margin-top: 3px; color: var(--color-primary); font-size: 23px; font-weight: 740; }
+  .planPrice { display: flex; align-items: baseline; gap: 7px; margin-top: 9px; } .planPrice strong { color: var(--color-primary); font-size: 34px; font-weight: 770; letter-spacing: -1.3px; } .planPrice span { color: var(--color-muted); font-size: 14px; }
+  .dataAllowance { margin-top: 13px; padding: 12px 13px; color: var(--color-primary); background: #f3f7f1; border-radius: 11px; font-size: 15px; font-weight: 750; }
+  .dataAllowance span { margin-left: 3px; color: var(--color-muted); font-size: 13px; font-weight: 500; }
+  .planCard ul { display: grid; gap: 10px; margin: 16px 0 21px; }
+  .planCard li { display: flex; align-items: center; gap: 8px; color: #52645e; font-size: 13px; }
+  .planCard li svg { flex: 0 0 auto; color: #46835c; font-size: 15px; }
+  .planCard > button { width: 100%; margin-top: auto; } .planCard > button:disabled { color: #31704b; background: #eef6e9; border-color: #d8e9d0; opacity: 1; }
+  .sectionTitle > a { display: inline-flex; align-items: center; gap: 5px; color: var(--color-primary); font-size: 13px; font-weight: 700; text-decoration: none; }
+  .addonGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+  .addonCard { display: grid; grid-template-columns: 46px minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 19px; background: #fff; border: 1px solid var(--color-border); border-radius: 17px; }
+  .addonIcon { width: 44px; height: 44px; display: grid; place-items: center; color: #35745b; background: #eaf5e9; border-radius: 13px; font-size: 20px; }
+  .musicIcon { color: #7560a7; background: #f0edfa; }
+  .addonCopy h3 { color: var(--color-primary); font-size: 16px; font-weight: 730; }
+  .addonCopy p { margin-top: 3px; color: var(--color-muted); font-size: 13px; }
+  .addonPrice { display: block; margin-top: 7px; color: var(--color-primary); font-size: 16px; font-weight: 750; }
+  .addonPrice small { color: var(--color-muted); font-size: 13px; font-weight: 500; }
+  .addonCard .button { min-width: 118px; padding: 0 12px; font-size: 13px; }
+  .totalNote { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 17px 20px; background: #edf2e9; border: 1px solid #dce7d7; border-radius: 15px; }
+  .totalNote > span { color: var(--color-muted); font-size: 14px; } .totalNote strong { color: var(--color-primary); font-size: 20px; }
+  .totalNote small { color: var(--color-muted); font-size: 13px; font-weight: 500; }
+  .disclaimer { color: var(--color-muted); font-size: 13px; text-align: center; }
+  .confirmPlan { display: grid; gap: 12px; }
+  .confirmPlan > div:not(.confirmActions) { display: flex; justify-content: space-between; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+  .confirmPlan > div span { color: var(--color-muted); } .confirmPlan > div strong { color: var(--color-primary); }
+  .confirmPlan > p { padding: 11px; color: #795a31; background: #fff6df; border-radius: 10px; font-size: 13px; }
+  .confirmActions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 4px; }
+  @media (max-width: 900px) { .planGrid { grid-template-columns: 1fr 1fr; } .planCard:last-child { grid-column: 1 / -1; min-height: 390px; } .addonGrid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) {
+    gap: 25px; .pageIntro { align-items: flex-start; flex-direction: column; } .currentLine { align-self: stretch; }
+    .currentPlanBand { align-items: flex-start; flex-wrap: wrap; padding: 17px; } .currentPlanBand > div:nth-child(2) { min-width: 160px; } .priceNow { margin-left: 60px; align-items: flex-start; }
+    .sectionTitle { align-items: flex-start; flex-direction: column; gap: 8px; } .planGrid { grid-template-columns: 1fr; } .planCard, .planCard:last-child { min-height: 0; grid-column: auto; }
+    .addonCard { grid-template-columns: 44px minmax(0, 1fr); } .addonCard .button { grid-column: 1 / -1; width: 100%; }
+    .totalNote { align-items: flex-start; flex-direction: column; } .confirmActions { flex-direction: column-reverse; } .confirmActions .button { width: 100%; }
+  }
+}
