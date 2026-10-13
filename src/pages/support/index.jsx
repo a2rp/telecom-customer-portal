@@ -21,7 +21,7 @@ const Support = ({ tickets, setTickets, notify, showModal, closeModal }) => {
       <form className={styles.caseForm} onSubmit={(event) => {
         event.preventDefault();
         const fields = new FormData(event.currentTarget);
-        const id = "VL-" + String(2050 + tickets.length).padStart(4, "0");
+        const id = "VL-" + String(Date.now()).slice(-6);
         const nextTicket = {
           id,
           subject: fields.get("subject").trim(),
@@ -133,3 +133,4 @@ const Support = ({ tickets, setTickets, notify, showModal, closeModal }) => {
 };
 
 export default Support;
+
